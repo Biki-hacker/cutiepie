@@ -41,20 +41,6 @@ export default function FinalPage() {
           
           {showFinalMessage && (
             <div className="mt-6 space-y-4">
-              <p className="text-lg">
-                I promise to make you smile every single day! ✨
-              </p>
-              <div className="text-sm text-gray-500 mt-8">
-                <p>P.S. You can't take it back now! 😘</p>
-                <div className="mt-4">
-                  <Link 
-                    to="/" 
-                    className="inline-block bg-white bg-opacity-70 hover:bg-opacity-100 px-4 py-2 rounded-lg shadow-md transition-all"
-                  >
-                    Start Over
-                  </Link>
-                </div>
-              </div>
             </div>
           )}
         </div>
