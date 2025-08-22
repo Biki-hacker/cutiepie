@@ -61,12 +61,12 @@ const ShuffleCups = ({ onResult }) => {
 
   return (
     <div className="flex flex-col items-center gap-8">
-      <div className="flex flex-wrap justify-center gap-4 sm:gap-8">
+      <div className="flex flex-nowrap justify-center gap-2 sm:gap-4">
         {[0, 1, 2].map((index) => (
           <motion.div
             key={index}
-            className={`relative w-24 h-24 sm:w-32 sm:h-32 rounded-full border-4 
-                      flex items-center justify-center shadow-lg
+            className={`relative w-16 h-16 sm:w-20 sm:h-20 rounded-full border-4 
+                      flex items-center justify-center shadow-lg flex-shrink-0
                       ${revealed[index] 
                         ? 'border-pink-400 bg-pink-100' 
                         : 'border-pink-300 bg-pink-50 hover:scale-105'}
@@ -80,7 +80,7 @@ const ShuffleCups = ({ onResult }) => {
             <AnimatePresence>
               {revealed[index] ? (
                 <motion.span 
-                  className="text-2xl font-bold text-pink-600"
+                  className="text-lg sm:text-xl font-bold text-pink-600"
                   initial={{ scale: 0, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   exit={{ scale: 0, opacity: 0 }}
@@ -94,7 +94,7 @@ const ShuffleCups = ({ onResult }) => {
                   exit={{ scale: 0 }}
                 >
                   {!isShuffled && (
-                    <span className="text-2xl font-bold text-pink-600">
+                    <span className="text-lg sm:text-xl font-bold text-pink-600">
                       {currentCups[index] || 'Empty'}
                     </span>
                   )}

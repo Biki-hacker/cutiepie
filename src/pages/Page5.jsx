@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import PageWrapper from '../components/Layout/PageWrapper';
-import YesButton from '../components/Buttons/YesButton';
 import NoButton from '../components/Buttons/NoButton';
 
 export default function Page5() {
@@ -104,11 +103,17 @@ export default function Page5() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              <Link to="/final">
-                <YesButton>Yes</YesButton>
+              <Link 
+                to="/final" 
+                className="bg-green-400 hover:bg-green-500 px-4 py-2 rounded-lg text-white font-medium shadow-md mx-2 text-sm sm:text-base transition-colors"
+              >
+                Yes...
               </Link>
-              <Link to="/final">
-                <YesButton>Yes</YesButton>
+              <Link 
+                to="/final" 
+                className="bg-green-400 hover:bg-green-500 px-4 py-2 rounded-lg text-white font-medium shadow-md mx-2 text-sm sm:text-base transition-colors"
+              >
+                Yes...
               </Link>
             </motion.div>
           )}
