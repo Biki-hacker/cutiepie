@@ -48,7 +48,7 @@ export default function FinalPage() {
       
       {showMessage && (
         <div className="space-y-4 mb-8">
-          <p className="text-xl text-pink-700">
+          <p className="text-xl text-pink-700 text-center">
             You've made me the happiest person in the world! 
           </p>
           

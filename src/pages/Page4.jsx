@@ -70,7 +70,7 @@ export default function Page4() {
   return (
     <PageWrapper>
       <h1 className="text-2xl md:text-3xl font-bold text-pink-600 mb-8 text-center">
-        You can't escape me 💨❤️
+        You can't escape me ❤️
       </h1>
       
       {/* Character GIF Placeholder */}
