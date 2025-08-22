@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import PageWrapper from '../components/Layout/PageWrapper';
 import ConfettiEffect from '../components/Animations/ConfettiEffect';
@@ -7,8 +7,14 @@ export default function FinalPage() {
   const [showConfetti, setShowConfetti] = useState(true);
   const [showMessage, setShowMessage] = useState(false);
   const [showFinalMessage, setShowFinalMessage] = useState(false);
+  const audioRef = useRef(null);
 
   useEffect(() => {
+    // Play the yay sound when the component mounts
+    const audio = new Audio('/yay.mp3');
+    audioRef.current = audio;
+    audio.play().catch(error => console.log('Audio play failed:', error));
+    
     // Show first message after a short delay
     const timer1 = setTimeout(() => setShowMessage(true), 1000);
     // Show final message after another delay
@@ -17,6 +23,11 @@ export default function FinalPage() {
     return () => {
       clearTimeout(timer1);
       clearTimeout(timer2);
+      // Clean up audio when component unmounts
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
     };
   }, []);
 
@@ -29,9 +40,11 @@ export default function FinalPage() {
         </h1>
       </>
       
-      <div className="w-48 h-48 bg-pink-200 rounded-full mx-auto mb-6 flex items-center justify-center text-6xl">
-        💖
-      </div>
+      <img 
+        src="/final.gif" 
+        alt="Celebration animation" 
+        className="w-48 h-48 rounded-full mx-auto mb-6 object-cover"
+      />
       
       {showMessage && (
         <div className="space-y-4 mb-8">

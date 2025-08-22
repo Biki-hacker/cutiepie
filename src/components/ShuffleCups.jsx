@@ -11,8 +11,8 @@ const ShuffleCups = ({ onResult }) => {
   const handleCupClick = (index) => {
     if (revealed[index]) return;
     
-    const newRevealed = [...revealed];
-    newRevealed[index] = true;
+    // Lock all other cups by marking them as revealed
+    const newRevealed = revealed.map((_, i) => i === index || revealed[i]);
     setRevealed(newRevealed);
     setSelectedCup(index);
     setShowActionButtons(true);
@@ -66,11 +66,12 @@ const ShuffleCups = ({ onResult }) => {
           <motion.div
             key={index}
             className={`relative w-24 h-24 sm:w-32 sm:h-32 rounded-full border-4 
-                      flex items-center justify-center cursor-pointer shadow-lg
+                      flex items-center justify-center shadow-lg
                       ${revealed[index] 
                         ? 'border-pink-400 bg-pink-100' 
-                        : 'border-pink-300 bg-pink-50 hover:scale-105'}`}
-            onClick={() => isShuffled && handleCupClick(index)}
+                        : 'border-pink-300 bg-pink-50 hover:scale-105'}
+                      ${isShuffled && !revealed.some(r => r) ? 'cursor-pointer' : 'cursor-not-allowed opacity-70'}`}
+            onClick={() => isShuffled && !revealed.some(r => r) && handleCupClick(index)}
             variants={cupVariants}
             initial="initial"
             animate={revealed[index] ? 'clicked' : 'initial'}

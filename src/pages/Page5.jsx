@@ -43,10 +43,11 @@ export default function Page5() {
       </h1>
       
       {/* Angry Character GIF Placeholder */}
-      <div className="w-40 h-40 sm:w-48 sm:h-48 bg-gradient-to-br from-red-100 to-red-200 rounded-full mx-auto mb-10 
-                  flex items-center justify-center text-4xl">
-        😠
-      </div>
+      <img 
+        src="/page5.gif" 
+        alt="Angry animation" 
+        className="w-40 h-40 sm:w-48 sm:h-48 rounded-full mx-auto mb-10 object-cover"
+      />
       
       <div className="flex flex-col items-center justify-center min-h-[200px]">
         <AnimatePresence>

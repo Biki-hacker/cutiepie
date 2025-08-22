@@ -74,10 +74,11 @@ export default function Page4() {
       </h1>
       
       {/* Character GIF Placeholder */}
-      <div className="w-40 h-40 sm:w-48 sm:h-48 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full mx-auto mb-10 
-                  flex items-center justify-center text-4xl">
-        🌬️
-      </div>
+      <img 
+        src="/page4.gif" 
+        alt="Cute animation" 
+        className="w-40 h-40 sm:w-48 sm:h-48 rounded-full mx-auto mb-10 object-cover"
+      />
       
       <div 
         ref={containerRef}
