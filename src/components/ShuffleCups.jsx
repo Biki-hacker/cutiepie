@@ -55,7 +55,7 @@ const ShuffleCups = ({ onResult }) => {
   };
 
   const getInitialMessage = () => {
-    if (!isShuffled) return 'Click the Shuffle button to start the game!';
+    if (!isShuffled) return 'Click the Reshuffle button to start the game!';
     return 'Click on a cup to reveal the result';
   };
 
