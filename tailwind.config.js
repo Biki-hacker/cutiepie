@@ -6,7 +6,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'handwritten': ['"Playpen Sans"', 'cursive', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }

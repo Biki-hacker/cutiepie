@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const Message = ({ text, isUser = false, onButtonClick, buttonText, showButton = false }) => (
   <div className={`flex ${isUser ? 'justify-end' : 'justify-start'} mb-4 px-2 sm:px-4`}>
     <div 
-      className={`max-w-[80%] sm:max-w-[70%] md:max-w-[60%] lg:max-w-[50%] xl:max-w-[40%] rounded-lg px-4 py-2 ${
+      className={`max-w-[85%] sm:max-w-[75%] md:max-w-[65%] lg:max-w-[55%] xl:max-w-[45%] rounded-lg px-5 py-3 ${
         isUser ? 'bg-green-100' : 'bg-white'
       } shadow-lg transition-all duration-200`}
       style={{
@@ -13,7 +13,7 @@ const Message = ({ text, isUser = false, onButtonClick, buttonText, showButton =
         borderTopRightRadius: isUser ? '0.5rem' : '1.5rem',
       }}
     >
-      <p className="text-gray-800 text-sm sm:text-base whitespace-pre-line leading-relaxed">
+      <p className="text-gray-800 text-base sm:text-lg whitespace-pre-line leading-relaxed">
         {text}
       </p>
       {showButton && buttonText && (

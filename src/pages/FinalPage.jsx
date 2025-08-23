@@ -35,11 +35,15 @@ export default function FinalPage() {
     <PageWrapper>
       <>
         {showConfetti && <ConfettiEffect />}
-        <h1 className="text-2xl md:text-3xl font-bold text-pink-600 mb-6">
+        <h1 className="text-2xl md:text-3xl font-bold text-pink-600 mb-2 text-center">
           YAY! I KNEW IT! 🎉
         </h1>
       </>
-      
+
+      <p className="text-black mb-6 text-center font-handwritten text-xl">
+        You + Me = quiet nights, loud hearts. 💓
+      </p>
+
       <img 
         src="/final.gif" 
         alt="Celebration animation" 
@@ -49,7 +53,7 @@ export default function FinalPage() {
       {showMessage && (
         <div className="space-y-4 mb-8">
           <p className="text-xl text-pink-700 text-center">
-            You've made me the happiest person in the world! 
+            You've made me the happiest person in the world (btw, you are my world😉)! 
           </p>
           
           {showFinalMessage && (
