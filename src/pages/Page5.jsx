@@ -153,7 +153,7 @@ export default function Page5() {
                 onClick={() => navigate('/final')}
                 className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-8 rounded-full transition-colors"
               >
-                Yes
+                Okay..🤭
               </button>
             </div>
             
