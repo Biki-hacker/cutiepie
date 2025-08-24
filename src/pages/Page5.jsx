@@ -8,6 +8,7 @@ export default function Page5() {
   const [showNoButton, setShowNoButton] = useState(true);
   const [showExplosion, setShowExplosion] = useState(false);
   const [showYesButtons, setShowYesButtons] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -38,7 +39,7 @@ export default function Page5() {
   return (
     <PageWrapper>
       <h1 className="text-2xl md:text-3xl font-bold text-pink-600 mb-8 text-center">
-        You've left me no choice! 💥
+        You've left me <button onClick={() => setShowModal(true)} className="inline p-0 m-0 border-0 bg-transparent font-bold text-pink-600 cursor-pointer hover:no-underline hover:bg-transparent text-2xl md:text-3xl">no</button> choice! 💥
       </h1>
       
       {/* Angry Character GIF Placeholder */}
@@ -119,6 +120,46 @@ export default function Page5() {
           )}
         </AnimatePresence>
       </div>
+
+      {/* Clever Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-2xl p-6 max-w-md w-full mx-4 shadow-xl relative">
+            <button 
+              onClick={() => setShowModal(false)}
+              className="absolute -top-3 -right-3 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors"
+              aria-label="Close"
+            >
+              ✕
+            </button>
+            <p className="text-gray-800 text-center mb-6">
+              You're really clever... clever enough to realize we'd be the perfect couple, right?😉
+            </p>
+            
+            <div className="flex justify-center mb-6">
+              <img 
+                src="/clever.gif" 
+                alt="Clever animation" 
+                className="max-w-full max-h-96 object-contain rounded-lg"
+              />
+            </div>
+            
+            <p className="text-gray-700 text-center mb-6">
+              Then, baby, just choose my hand 🥰
+            </p>
+            
+            <div className="flex justify-center">
+              <button 
+                onClick={() => navigate('/final')}
+                className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-8 rounded-full transition-colors"
+              >
+                Yes
+              </button>
+            </div>
+            
+          </div>
+        </div>
+      )}
     </PageWrapper>
   );
 }
